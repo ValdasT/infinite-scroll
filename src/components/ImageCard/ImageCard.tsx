@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './ImageCard.module.css';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
+import { truncateText } from '../../utils/utils';
 
 interface ImageProps {
   id: number;
@@ -14,18 +15,6 @@ interface ImageProps {
   isFavorited: boolean;
   toggleFavorite: (id: number) => void;
 }
-
-const truncateText = (text: string, maxLength: number): string => {
-  if (text.length <= maxLength) return text;
-
-  return text
-    .split(' ')
-    .reduce((acc, word) => {
-      const newLength = acc.length + (acc ? 1 : 0) + word.length;
-      return newLength > maxLength ? acc : `${acc} ${word}`.trim();
-    }, '')
-    .concat('...');
-};
 
 const ImageCard: React.FC<ImageProps> = ({ id, src, photographer, alt, isFavorited, toggleFavorite }) => {
   const [isTouched, setIsTouched] = useState(false);
