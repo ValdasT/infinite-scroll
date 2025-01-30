@@ -1,0 +1,24 @@
+.imageGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    padding: 30px;
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    width: 100vw;
+    top: 0;
+    left: 0;
+  }
+  
