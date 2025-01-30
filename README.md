@@ -53,7 +53,7 @@ The optimized build files will be placed in the `dist` folder.
 ### **Preview Production Build**
 
 ```
-npm run preview
+npm run start
 ```
 
 This serves the production build locally.
