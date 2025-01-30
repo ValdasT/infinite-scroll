@@ -21,7 +21,7 @@ Infinite Scroll is a React application that implements an infinite scrolling fea
 ### 1️⃣ Clone the Repository
 
 ```
-git clone https://github.com/TO-DO
+git clone https://github.com/ValdasT/infinite-scroll.git
 cd Infinite-scroll
 ```
 
