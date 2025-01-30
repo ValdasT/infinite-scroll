@@ -43,7 +43,7 @@ const ImageCard: React.FC<ImageProps> = ({ id, src, photographer, alt, isFavorit
         />
         {isFavorited && <div className={styles.heartIcon}>♡</div>}
         <div className={styles.overlay}>
-          <h3 className={styles.title}>{truncatedAlt}</h3>
+          <h3 className={styles.title} style={{ fontWeight: 900 }}>{truncatedAlt}</h3>
           <hr className={styles.separator} />
           <h3 className={styles.title}>{truncatedPhotographer}</h3>
           <FavoriteButton id={id} isFavorited={isFavorited} toggleFavorite={toggleFavorite} />
