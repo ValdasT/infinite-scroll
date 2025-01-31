@@ -18,14 +18,14 @@ Infinite Scroll is a React application that implements an infinite scrolling fea
 
 ## Installation
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 
 ```
 git clone https://github.com/ValdasT/infinite-scroll.git
 cd Infinite-scroll
 ```
 
-### 2️⃣ Install Dependencies
+### Install Dependencies
 
 ```
 npm install
@@ -58,7 +58,7 @@ npm run start
 
 This serves the production build locally.
 
-## ✅ Running Tests
+## Running Tests
 
 ### **Run Unit & Integration Tests**
 
@@ -76,7 +76,7 @@ npm run test:coverage
 
 This generates a code coverage report.
 
-## 🧹 Code Quality & Linting
+## Code Quality & Linting
 
 ### **Check for Linting Issues**
 
@@ -90,7 +90,7 @@ npm run lint
 npm run lint --fix
 ```
 
-## 📦 Technologies Used
+## Technologies Used
 
 -   **React** (Frontend framework)
     
