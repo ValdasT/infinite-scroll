@@ -3,6 +3,10 @@
 
 Infinite Scroll is a React application that implements an infinite scrolling feature for displaying images from an API. Users can scroll through dynamically loaded images without needing pagination buttons.
 
+## Demo
+
+![Demo Preview](./public/demo.gif)
+
 ## Features
 
 -   **Infinite Scrolling:** Automatically loads more images when scrolling.
