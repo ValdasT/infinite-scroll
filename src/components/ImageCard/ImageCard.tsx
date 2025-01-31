@@ -1,26 +1,25 @@
-import React, { useState } from 'react';
+import { useState, memo } from 'react';
 import styles from './ImageCard.module.css';
 import FavoriteButton from '../FavoriteButton/FavoriteButton';
 import { truncateText } from '../../utils/utils';
 
-interface ImageProps {
+type ImageSrc = {
+  small: string;
+  medium: string;
+  large: string;
+};
+
+type ImageProps = {
   id: number;
-  src: {
-    small: string;
-    medium: string;
-    large: string;
-  };
+  src: ImageSrc;
   photographer: string;
   alt: string;
   isFavorited: boolean;
   toggleFavorite: (id: number) => void;
-}
+};
 
-const ImageCard: React.FC<ImageProps> = ({ id, src, photographer, alt, isFavorited, toggleFavorite }) => {
+const ImageCard = ({ id, src, photographer, alt, isFavorited, toggleFavorite }: ImageProps) => {
   const [isTouched, setIsTouched] = useState(false);
-
-  const truncatedAlt = truncateText(alt, 40);
-  const truncatedPhotographer = truncateText(photographer, 40);
 
   return (
     <div
@@ -34,18 +33,14 @@ const ImageCard: React.FC<ImageProps> = ({ id, src, photographer, alt, isFavorit
           alt={alt}
           loading="lazy"
           className={styles.image}
-          srcSet={`
-    ${src.small} 350w, 
-    ${src.medium} 940w, 
-    ${src.large} 1200w
-  `}
+          srcSet={`${src.small} 350w, ${src.medium} 940w, ${src.large} 1200w`}
           sizes="(max-width: 600px) 350px, (max-width: 1024px) 940px, 1200px"
         />
         {isFavorited && <div className={styles.heartIcon}>♡</div>}
         <div className={styles.overlay}>
-          <h3 className={styles.title} style={{ fontWeight: 900 }}>{truncatedAlt}</h3>
+          <h3 className={styles.title} style={{ fontWeight: 900 }}>{truncateText(alt, 40)}</h3>
           <hr className={styles.separator} />
-          <h3 className={styles.title}>{truncatedPhotographer}</h3>
+          <h3 className={styles.title}>{truncateText(photographer, 40)}</h3>
           <FavoriteButton id={id} isFavorited={isFavorited} toggleFavorite={toggleFavorite} />
         </div>
       </div>
@@ -53,4 +48,4 @@ const ImageCard: React.FC<ImageProps> = ({ id, src, photographer, alt, isFavorit
   );
 };
 
-export default ImageCard;
+export default memo(ImageCard);

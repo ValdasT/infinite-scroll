@@ -5,7 +5,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import jest from 'eslint-plugin-jest';
-import jsxA11y from 'eslint-plugin-jsx-a11y'; // ✅ Use import instead of require
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 const cleanGlobals = Object.fromEntries(
   Object.entries(globals.browser).map(([key, value]) => [key.trim(), value])
